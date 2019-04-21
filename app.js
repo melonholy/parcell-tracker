@@ -27,10 +27,10 @@ app.use(function (err, req, res, next) {
     .json();
 });
 
-app.use(express.static(path.join(__dirname, "Frontend", "build")));
-app.get("/", (req, res) => {
+app.use(express.static(path.resolve(__dirname, "Frontend", "build")));
+app.get("*", (req, res) => {
   res.sendFile(
-    path.join(__dirname, "Frontend", "build", "index.html")
+    path.resolve(__dirname, "Frontend", "build", "index.html")
   );
 });
 app.listen(5000, function () {
