@@ -26,7 +26,11 @@ app.use(function (err, req, res, next) {
 });
 
 app.use(express.static( path.resolve(__dirname, "Frontend", "build")));
-
+app.get("*", (req, res) => {
+  res.sendFile(
+    path.resolve(__dirname, "Frontend", "build", "index.html")
+  );
+});
 app.listen(5000, function () {
   console.log('Example app listening on port 5000!');
 });
