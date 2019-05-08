@@ -71,9 +71,10 @@ class Tracking extends React.Component {
                 })
         })
         let exist = false;
-        axios.defaults.headers.common["aftership-api-key"] = '72d70ffe-4d33-4a3a-b9fa-92280a7b3f10';
+        axios.defaults.headers.common["aftership-api-key"] = 'c077d13d-c4cb-4a24-81bd-ac7e6bede95f';
         axios.defaults.headers.common["Content-Type"] = 'application/json';
         delete axios.defaults.headers.common["Authorization"];
+        
         let body = {
             'tracking': {
                 'tracking_number': value,

@@ -43,3 +43,9 @@ export const deleteParcellsFromUser = parcell => {
       return err.response;
     });
 };
+
+
+export const checkStatus = () => {
+  axios
+    .get(`/api/users/checkStatus`)
+};
