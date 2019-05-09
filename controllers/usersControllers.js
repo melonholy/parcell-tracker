@@ -70,6 +70,16 @@ const searchParcellsFromUserController = async (req, res, next) => {
         next(err);
     }
 };
+const checkStatusController = async (req, res, next) => {
+    const response = await services.checkStatus();
+    if (response) {
+        res.json(response);
+    } else {
+        let err = new Error();
+        err.statusCode = HttpStatus.BAD_REQUEST;
+        next(err);
+    }
+};
 
 module.exports = {
     registerController,
@@ -77,5 +87,6 @@ module.exports = {
     searchCurrentUserController,
     addParcellController,
     searchParcellsFromUserController,
-    deleteParcellController
+    deleteParcellController,
+    checkStatusController
 };

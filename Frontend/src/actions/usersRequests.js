@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const searchCurrentUser = userId => {
   return axios
-    .get(`/api/users/${userId}`)
+    .get(`/api/users/id/${userId}`)
     .then(res => {
       return res.data;
     })
@@ -42,4 +42,10 @@ export const deleteParcellsFromUser = parcell => {
     .catch(err => {
       return err.response;
     });
+};
+
+
+export const checkStatus = () => {
+  axios
+    .get(`/api/users/checkStatus`)
 };
