@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const searchCurrentUser = userId => {
   return axios
-    .get(`/api/users/${userId}`)
+    .get(`/api/users/id/${userId}`)
     .then(res => {
       return res.data;
     })

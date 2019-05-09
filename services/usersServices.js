@@ -105,7 +105,6 @@ const deleteParcell = async data => {
     )
     return result
   }
-
 }
 
 const searchParcellsFromUser = async data => {
@@ -130,7 +129,7 @@ const checkStatus = async () => {
 
         await User.findOneAndUpdate(
           { _id: res._id, 'parcells.trackingNumber': parcell.trackingNumber },
-          {
+          { 
             '$set': {
               'parcells.$.status': singleParcell.tag,
             }
